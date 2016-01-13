@@ -27,3 +27,9 @@ NEICoal <- NEI[NEI$SCC %in% coal$SCC,]
 
 SCC_mobile <- SCC[SCC$SCC.Level.One == 'Mobile Sources',]
 Balti_mobile <- NEI[NEI$SCC %in% SCC_mobile$SCC & NEI$fips=='24510',]
+cali_mobile <- NEI[NEI$SCC %in% SCC_mobile$SCC & NEI$fips=='06037',]
+
+
+par(mfrow = c(1, 2))
+boxplot(log(cali_mobile$Emissions) ~ cali_mobile$year)
+boxplot(log(Balti_mobile$Emissions) ~ Balti_mobile$year)
