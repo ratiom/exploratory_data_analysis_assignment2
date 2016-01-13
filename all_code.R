@@ -25,4 +25,5 @@ p3 <- ggplot(q3, aes(x=q3$V2, y=q3$V1)) + geom_bar(stat = "identity")
 coal <- SCC[grep('Coal', SCC$Short.Name),]
 NEICoal <- NEI[NEI$SCC %in% coal$SCC,]
 
+SCC_mobile <- SCC[SCC$SCC.Level.One == 'Mobile Sources',]
 Balti_mobile <- NEI[NEI$SCC %in% SCC_mobile$SCC & NEI$fips=='24510',]
